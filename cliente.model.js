@@ -25,3 +25,4 @@ clienteSchema = new mongoose.Cliente({
         required: true  
     }
 });
+module.exports = clienteSchema;

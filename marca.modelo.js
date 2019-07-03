@@ -1,5 +1,5 @@
 var mongoose=require('mongoose');
 
 module.exports=new mongoose.Schema({
-    marca:String
+    marca:{type:String,required:true}
 });

@@ -1,8 +1,8 @@
 const clienteController = require("./cliente.controller");
 const ventaController = require("./venta.controller");
 var mongoose = require("mongoose");
-var brandSchema = require("./brand.model");
-var productSchema = require("./product.model");
+var brandSchema = require("./marca.modelo");
+var productSchema = require("./producto.modelo");
 var clienteSchema = require("./cliente.model");
 var ventaSchema = require("./venta.model");
 

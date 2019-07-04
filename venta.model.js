@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 ventaSchema = new mongoose.Venta({
     cliente: {
-        id_cliente: { type: mongoose.Schema.Types.ObjectId, ref: 'cliente.model' },
+        type: mongoose.Schema.Types.ObjectId, ref: 'Cliente',
         required: true,
     },
     fecha: {
@@ -10,7 +10,7 @@ ventaSchema = new mongoose.Venta({
         default: Date.now(),
     },
     productos: [{
-        id_prod: { type: mongoose.Schema.Types.ObjectId, ref: 'productos.model' },
+        type: mongoose.Schema.Types.ObjectId, ref: 'Product',
         cantidad: Number
     }],
     subtotal: {

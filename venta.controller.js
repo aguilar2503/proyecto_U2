@@ -11,7 +11,7 @@ async function create (venta, Venta){
     })
     return ventaCreate;
 }
-async function findByName(NameToFind, Client) {
+async function findByCliente(NameToFind, Client) {
 
     var params = {
         name: NameToFind
@@ -30,6 +30,8 @@ async function findByName(NameToFind, Client) {
 
     return ventaFind;
 }
+
+async function updateVenta(Venta){
 Venta.update({_id:'5d159119804ab4119c068fea'}, {$set: {subtotal:200}},
 function (error, docs){
     if (error){
@@ -39,8 +41,9 @@ function (error, docs){
     console.log("<----------Actualizacion---------->");
     console.log(docs);
     process.exit(0);
-});
+});}
 //Delete
+async function deleteVenta(Venta){
 Venta.findByIdAndRemove({_id:'5d159119804ab4119c068fea'}, function (error,docs){
     if (error){
         console.log(error);
@@ -48,10 +51,10 @@ Venta.findByIdAndRemove({_id:'5d159119804ab4119c068fea'}, function (error,docs){
     }
     console.log("Exito");
     process.exit(0);
-});
+});}
 
 
 module.exports.create = create; 
-module.exports.findByName= findByName;
-module.exports.update = this.update;
+module.exports.findByCliente= findByCliente;
+module.exports.updateVenta = this.updateVenta;
 module.exports.findByIdAndRemove = this.findByIdAndRemove;

@@ -43,5 +43,32 @@ async function findByPrice(priceToFind, Product) {
     return productFind;
 }
 
+async function update(Product){
+    Product.update({_id:'5d159119804ab4119c068fea'}, {$set: {email:'ejemplo2@ittepic.com'}},
+        function (error, docs){
+            if (error){
+                console.log(error);
+                process.exit(1);
+            }
+            console.log("<----------Actualizacion---------->");
+            console.log(docs);
+            process.exit(0);
+        });
+}
+
+async function deleteProductById(Product){
+    Cliente.findByIdAndRemove({_id:'5d159119804ab4119c068fea'}, function (error,docs){
+        if (error){
+            console.log(error);
+            process.exit(1);
+        }
+        console.log("Exito");
+        process.exit(0);
+    });
+}
+
+
 module.exports.create = create;
 module.exports.findByPrice = findByPrice;
+module.exports.deleteProductById=deleteProductById;
+module.exports.update=update;

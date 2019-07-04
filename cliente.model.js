@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-clienteSchema = new mongoose.Cliente({
+clienteSchema = new mongoose.Schema({
     rfc: {
         type: String,
         required: true,

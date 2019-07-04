@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-ventaSchema = new mongoose.Venta({
+ventaSchema = new mongoose.Schema({
     cliente: {
         type: mongoose.Schema.Types.ObjectId, ref: 'Cliente',
         required: true,

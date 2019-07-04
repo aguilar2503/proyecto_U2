@@ -36,6 +36,7 @@ async function findByName(NameToFind, Client) {
 
     return clientFind;
 }
+async function update(Cliente){
 Cliente.update({_id:'5d159119804ab4119c068fea'}, {$set: {email:'ejemplo2@ittepic.com'}},
 function (error, docs){
     if (error){
@@ -46,8 +47,10 @@ function (error, docs){
     console.log(docs);
     process.exit(0);
 });
+}
 //Delete
-User.findByIdAndRemove({_id:'5d159119804ab4119c068fea'}, function (error,docs){
+async function deleteClient(Cliente){
+Cliente.findByIdAndRemove({_id:'5d159119804ab4119c068fea'}, function (error,docs){
     if (error){
         console.log(error);
         process.exit(1);
@@ -55,7 +58,7 @@ User.findByIdAndRemove({_id:'5d159119804ab4119c068fea'}, function (error,docs){
     console.log("Exito");
     process.exit(0);
 });
-
+}
 
 module.exports.create = create; 
 module.exports.findByName= findByName;

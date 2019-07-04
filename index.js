@@ -1,5 +1,7 @@
 const clienteController = require("./cliente.controller");
 const ventaController = require("./venta.controller");
+const productController = require("./producto.controlador");
+const brandController = require("./marca.controlador");
 var mongoose = require("mongoose");
 var brandSchema = require("./marca.modelo");
 var productSchema = require("./producto.modelo");
@@ -12,6 +14,7 @@ var Cliente = mongoose.model('Cliente', clienteSchema, 'clientes');
 var Venta = mongoose.model('Venta', ventaSchema, 'ventas');
 var Brand = mongoose.model('Brand', brandSchema, 'brands');
 var Product = mongoose.model('Product', productSchema, 'products');
+
 
 
 async function createVentaAndCliente() {
@@ -28,7 +31,7 @@ async function createVentaAndCliente() {
     console.log(ventaCreated);
 }
 async function findVenta(cliente) {
-    var ventaCliente = await ventaController.findByCliente(Cliente, Product)
+    var ventaCliente = await ventaController.findByCliente(cliente, Product)
     console.log("------- Venta Encontrada --------");
 
     console.log(ventaCliente);

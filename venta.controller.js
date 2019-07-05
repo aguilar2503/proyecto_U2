@@ -56,5 +56,5 @@ Venta.findByIdAndRemove({_id:'5d159119804ab4119c068fea'}, function (error,docs){
 
 module.exports.create = create; 
 module.exports.findByCliente= findByCliente;
-module.exports.updateVenta = this.updateVenta;
-module.exports.findByIdAndRemove = this.findByIdAndRemove;
+module.exports.updateVenta = updateVenta;
+module.exports.deleteVenta = deleteVenta;

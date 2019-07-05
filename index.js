@@ -15,18 +15,39 @@ var Venta = mongoose.model('Venta', ventaSchema, 'ventas');
 var Brand = mongoose.model('Brand', brandSchema, 'brands');
 var Product = mongoose.model('Product', productSchema, 'products');
 
+async function createCliente(){
+    var cliente = {
+        rfc: "AUMR970325E97",
+        name: "roberto",
+        email: "roanaguilarma@ittepic.edu.mx",
+        telefono:"3271052472",
+        domicilio: "G. Elias #133 Fraccionamiento amado nervo"
+    }
+    var clienteCreated = await clienteController.create(cliente, Cliente);
+    console.log("------- cliente Creado --------");
+    console.log(clienteCreated);
+}
+/*async function createBrand(){
+    var brand = {
+        marca = "adidas"
+    }
+    var brandCreated = await brandController.create(brand, Brand);
+    console.log("------- cliente Creado --------");
+    console.log(brandCreated);
+}*/
+
 
 
 async function createVentaAndCliente() {
     var venta = {
         fecha: Date.now(),
         subtotal: 100, 
-        iva: 0.16*subtotal,
-        total: iva+subtotal
+        iva: 0.16*100,
+        total: 16+100
     };
     const cliente = "Roberto";
 
-    var ventaCreated = await ventaController.create(cliente, productos, Cliente, Productos);
+    var ventaCreated = await ventaController.create(cliente, productos, venta, Cliente, Productos, Venta);
     console.log("------- Venta Creada --------");
     console.log(ventaCreated);
 }
@@ -62,5 +83,8 @@ createBrandAndProduct();
 findProduct(100);
 findVenta("Roberto");
 createVentaAndCliente();
+createCliente();
+//createBrand();
+
 
 

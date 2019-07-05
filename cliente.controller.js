@@ -36,7 +36,7 @@ async function findByName(NameToFind, Client) {
 
     return clientFind;
 }
-async function update(Cliente){
+async function updateCliente(Cliente){
 Cliente.update({_id:'5d159119804ab4119c068fea'}, {$set: {email:'ejemplo2@ittepic.com'}},
 function (error, docs){
     if (error){
@@ -61,9 +61,9 @@ Cliente.findByIdAndRemove({_id:'5d159119804ab4119c068fea'}, function (error,docs
 }
 
 module.exports.create = create; 
-module.exports.findByName= findByName;
-module.exports.update = this.update;
-module.exports.findByIdAndRemove = this.findByIdAndRemove;
+module.exports.findByName = findByName;
+module.exports.updateCliente = updateCliente;
+module.exports.deleteClient= deleteClient;
 
   
    
